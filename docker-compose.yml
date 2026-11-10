@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: hocvui-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: hocvui
+      POSTGRES_PASSWORD: hocvui_password_2026
+      POSTGRES_DB: hocvui_lms
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
